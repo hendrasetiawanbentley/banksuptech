@@ -337,7 +337,7 @@ def update_output(value):
     
    return (html.P([ '{}'.format(value)])),fig,fig2,fig3,fig4,fig6
 
-
+server = app.server
 if __name__ == '__main__':
     app.run_server(debug=True)
     
