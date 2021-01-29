@@ -26,11 +26,6 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 app.config['suppress_callback_exceptions']=True
 
-readytgntahun=pd.DataFrame(columns=[])
-df = pd.read_csv('australia net interest margin.csv')
-df['DATE'] = pd.to_datetime(df['DATE'], format="%d/%m/%y")
-fig = px.line(df, x=df.DATE, y=df['Net Interest Margin'])
-
 tabs_styles = {
     'height': '44px'
 }
