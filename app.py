@@ -13,12 +13,11 @@ import plotly.express as px
 import pandas as pd
 import dash_daq as daq
 from dash.dependencies import Input, Output
-import dash_cytoscape as cyto
 import dash_table
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 
-cyto.load_extra_layouts()
+
 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
