@@ -109,7 +109,6 @@ app.layout = html.Div([
 ])
 
 @app.callback(
-    dash.dependencies.Output('dd-output-container', 'children'),
     dash.dependencies.Output('x-time-series', 'figure'),
     dash.dependencies.Output('noninterestincome', 'figure'),
     dash.dependencies.Output('cost1', 'figure'),
@@ -236,7 +235,7 @@ def update_output(value):
             )
    
         
-        return (html.P([ '{}'.format(value)," menggunakan",html.Br(),"API",html.Br(),"Data Pullback"])),fig,fig2,fig3,fig4,fig6
+        return fig,fig2,fig3,fig4,fig6
    if value=='Bank of India': 
         df = pd.read_csv('India.csv')
         fig = make_subplots(specs=[[{"secondary_y": True}]])
@@ -298,10 +297,10 @@ def update_output(value):
             title_text="Bank Return On Asset and Bank Return On Equity"
             )
         
-        return (html.P([ '{}'.format(value)," menggunakan",html.Br(),"API",html.Br(),"Data Pullback"])),fig,fig2,fig3,fig4,fig6
+        return fig,fig2,fig3,fig4,fig6
     
     
-   return (html.P([ '{}'.format(value)])),fig,fig2,fig3,fig4,fig6
+   return fig,fig2,fig3,fig4,fig6
 
 
 if __name__ == '__main__':
