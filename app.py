@@ -29,7 +29,7 @@ app.config['suppress_callback_exceptions']=True
 app.layout = html.Div([
     dcc.Tabs([
         dcc.Tab(label='Banking Industry Current State', children=[
-            myList = ['Pilih Intitusi Pengawasan','Australian Securities and Investments Commission', 'Bank of India','BNR-National Bank of Rwanda','Bangko Sentral ng Pilipinas (BSP)','National Banking and Securities Commission (CNBV)','De Nederlandsche Bank (DNB)','Financial Conduct Authority (FCA)','Monetary Authority of Singapore (MAS)', 'Security Exchange Commision (SEC)','OeNB (Austria)']
+            myList = ['Pilih Intitusi Pengawasan','Australian Securities and Investments Commission', 'Bank of India','BNR-National Bank of Rwanda','Bangko Sentral ng Pilipinas (BSP)','National Banking and Securities Commission (CNBV)','De Nederlandsche Bank (DNB)','Financial Conduct Authority (FCA)','Monetary Authority of Singapore (MAS)','Security Exchange Commision (SEC)','OeNB (Austria)']
             default_category = 'Pilih Intitusi Pengawasan'
             html.Div([
             
