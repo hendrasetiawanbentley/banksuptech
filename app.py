@@ -46,8 +46,6 @@ app.layout = html.Div([
             options=[{'label':l, 'value':l} for l in myList],
             value = default_category
             ),
-            html.Div(id='dd-output-container'),
-            ],style={'width': '50%', 'display': 'inline-block','float': 'right'}),
             
             html.Div([
             html.H3('Related Country Banking Condition'),
