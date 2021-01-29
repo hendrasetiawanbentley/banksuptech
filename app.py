@@ -108,10 +108,6 @@ app.layout = html.Div([
 
 @app.callback(
     dash.dependencies.Output('x-time-series', 'figure'),
-    dash.dependencies.Output('noninterestincome', 'figure'),
-    dash.dependencies.Output('cost1', 'figure'),
-    dash.dependencies.Output('cost2', 'figure'),
-     dash.dependencies.Output('return', 'figure'),
     [dash.dependencies.Input('first-dropdown', 'value')])
 
 def update_output(value):
@@ -171,7 +167,7 @@ def update_output(value):
    fig6.update_layout(
     title_text="Bank Return On Asset and Bank Return On Equity"
     )
-   return fig,fig2,fig3,fig4,fig6
+   return fig
 
 
 if __name__ == '__main__':
