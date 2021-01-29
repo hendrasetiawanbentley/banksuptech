@@ -65,7 +65,7 @@ app.layout = html.Div([
     html.Div([html.H1('Financial Services Supervisory Technology', style={'textAlign': 'center','background': '#f9f9f9','box-shadow': '0 0 1px rgba(0,0,0,.2), 0 2px 4px rgba(0,0,0,.1)','border-radius': '5px','margin-bottom': '20px','text-shadow': '1px 1px 1px rgba(0,0,0,.1)'})]),
                        
     
-    dcc.Tabs(id="tabs-styled-with-inline", value='tab-1', children=[
+    dcc.Tabs(id="tabs-styled-with-inline", value='', children=[
         dcc.Tab(label='Banking Industry Current State', value='tab-1', style=tab_style, selected_style=tab_selected_style),
         dcc.Tab(label='Financial Technology Market State', value='tab-2', style=tab_style, selected_style=tab_selected_style),
         dcc.Tab(label='Indonesia State', value='tab-3', style=tab_style, selected_style=tab_selected_style),
