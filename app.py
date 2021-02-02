@@ -45,10 +45,10 @@ app.layout = html.Div([
             dcc.Dropdown(id='first-dropdown',
             options=[{'label':l, 'value':l} for l in myList],
             value = default_category
-            )],style={'width': '50%', 'display': 'inline-block','float': 'right'}),
-                 
+            ),
             html.Div(id='dd-output-container'),
             ],style={'width': '50%', 'display': 'inline-block','float': 'right'}),
+            
             
             html.Div([
             html.H3('Related Country Banking Condition'),
