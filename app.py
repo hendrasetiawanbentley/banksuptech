@@ -52,7 +52,7 @@ app.layout = html.Div([
             
             html.Div([
             html.H3('Related Country Banking Condition'),
-            html.H5('Summary and Analysis After All Graph'),
+            html.H5('Summary, Analysis and Math Modelling Per Country After All Graph'),
             html.H6(''),
             ],style={'width': '100%', 'display': 'inline-block'}),
             
@@ -213,8 +213,22 @@ def update_output(value):
        title_text="Bank Non Interest Income (%)"
        )
    if value=='Australian Securities and Investments Commission': 
+        df = pd.read_csv('australia.csv')
+        fig2 = px.scatter(df, x='Year', y='Bank noninterest income to total income (%)')
+        fig2.update_traces(mode='lines+markers')
+        fig2.update_xaxes(showgrid=False)
+        fig2.update_layout(
+          title_text="Bank Non Interest Income (%)"
+          )
         return fig2
-   if value=='Bank of India': 
+   if value=='Bank of India':
+        df = pd.read_csv('India.csv')
+        fig2 = px.scatter(df, x='Year', y='Bank noninterest income to total income (%)')
+        fig2.update_traces(mode='lines+markers')
+        fig2.update_xaxes(showgrid=False)
+        fig2.update_layout(
+          title_text="Bank Non Interest Income (%)"
+          )
         return fig2
    return fig2
 
@@ -230,9 +244,17 @@ def update_output(value):
    fig3.update_traces(mode='lines+markers')
    fig3.update_xaxes(showgrid=False)
      
-   if value=='Australian Securities and Investments Commission': 
+   if value=='Australian Securities and Investments Commission':
+        df = pd.read_csv('australia.csv')
+        fig3 = px.scatter(df, x='Year', y='Bank overhead costs to total assets (%)')
+        fig3.update_traces(mode='lines+markers')
+        fig3.update_xaxes(showgrid=False)
         return fig3
-   if value=='Bank of India': 
+   if value=='Bank of India':
+        df = pd.read_csv('India.csv')
+        fig3 = px.scatter(df, x='Year', y='Bank overhead costs to total assets (%)')
+        fig3.update_traces(mode='lines+markers')
+        fig3.update_xaxes(showgrid=False)
         return fig3
    return fig3
 
@@ -248,9 +270,17 @@ def update_output(value):
    fig4.update_traces(mode='lines+markers')
    fig4.update_xaxes(showgrid=False)
      
-   if value=='Australian Securities and Investments Commission': 
+   if value=='Australian Securities and Investments Commission':
+        df = pd.read_csv('australia.csv')
+        fig4 = px.scatter(df, x='Year', y='Bank cost to income ratio (%)')
+        fig4.update_traces(mode='lines+markers')
+        fig4.update_xaxes(showgrid=False)
         return fig4
-   if value=='Bank of India': 
+   if value=='Bank of India':
+        df = pd.read_csv('India.csv')
+        fig4 = px.scatter(df, x='Year', y='Bank cost to income ratio (%)')
+        fig4.update_traces(mode='lines+markers')
+        fig4.update_xaxes(showgrid=False)
         return fig4
    return fig4
 
@@ -272,9 +302,31 @@ def update_output(value):
     title_text="Bank Return On Asset and Bank Return On Equity"
     )
      
-   if value=='Australian Securities and Investments Commission': 
+   if value=='Australian Securities and Investments Commission':
+        df = pd.read_csv('australia.csv')
+        fig6 = make_subplots(specs=[[{"secondary_y": True}]])
+        fig6.add_trace(
+          go.Scatter(x=df.Year,y=df['Bank return on assets (%, after tax)'], name="Bank Return On Asset"),
+        )
+        fig6.add_trace(
+          go.Scatter(x=df.Year, y=df['Bank return on equity (%, after tax)'],name="Bank Return On Equity")    
+        )
+        fig6.update_layout(
+          title_text="Bank Return On Asset and Bank Return On Equity"
+        )
         return fig6
-   if value=='Bank of India': 
+   if value=='Bank of India':
+        df = pd.read_csv('India.csv')
+        fig6 = make_subplots(specs=[[{"secondary_y": True}]])
+        fig6.add_trace(
+          go.Scatter(x=df.Year,y=df['Bank return on assets (%, after tax)'], name="Bank Return On Asset"),
+        )
+        fig6.add_trace(
+          go.Scatter(x=df.Year, y=df['Bank return on equity (%, after tax)'],name="Bank Return On Equity")    
+        )
+        fig6.update_layout(
+          title_text="Bank Return On Asset and Bank Return On Equity"
+        )
         return fig6
    return fig6
 
