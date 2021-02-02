@@ -212,6 +212,17 @@ def update_output(value):
   
    return fig2
 
+@app.callback(
+    dash.dependencies.Output('dd-output-container', 'children'),
+    [dash.dependencies.Input('first-dropdown', 'value')])
+
+def update_output(value):
+   if value=='Australian Securities and Investments Commission': 
+        return (html.P([ '{}'.format(value)," menggunakan",html.Br(),"API",html.Br(),"Data Pullback"]))
+   if value=='Bank of India': 
+        return (html.P([ '{}'.format(value)," menggunakan",html.Br(),"API",html.Br(),"Data Pullback"]))
+   return (html.P([ '{}'.format(value)]))
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)
