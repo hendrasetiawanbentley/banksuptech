@@ -112,25 +112,20 @@ app.layout = html.Div([
 
 def update_output(value):
    df = pd.read_csv('empty.csv')
-   fig = make_subplots(specs=[[{"secondary_y": True}]])
-        
+   fig = make_subplots(specs=[[{"secondary_y": True}]]) 
         # Add traces
    fig.add_trace(
        go.Scatter(x=df.Year,y=df['Bank net interest margin (%)'], name="Bank Net Interest Margin"),
        )
    fig.add_trace(
        go.Scatter(x=df.Year, y=df['Bank return on assets (%, after tax)'],name="Bank return on assets (%) after tax")
-            
        )
-        
         # Add figure title
    fig.update_layout(
        title_text="Bank Net Interest Margin (%) and Bank Return on Asset (after tax) (%) Relationship "
        )
-
     # Set x-axis title
    fig.update_xaxes(title_text="Year")
-
     # Set y-axes titles
    fig.update_yaxes(
        title_text="<b>Percentage (%)</b>", 
@@ -138,35 +133,67 @@ def update_output(value):
    fig.update_yaxes(
        title_text="<b>secondary</b> yaxis title", 
        secondary_y=True)
-   
-   fig2 = px.scatter(df, x='Year', y='Bank noninterest income to total income (%)')
-   fig2.update_traces(mode='lines+markers')
-   fig2.update_xaxes(showgrid=False)
-   fig2.update_layout(
-       title_text="Bank Non Interest Income (%)"
-       )
-   
-   #figure3-cost structure
-   fig3 = px.scatter(df, x='Year', y='Bank overhead costs to total assets (%)')
-   fig3.update_traces(mode='lines+markers')
-   fig3.update_xaxes(showgrid=False)
+   if value=='Australian Securities and Investments Commission': 
+        df = pd.read_csv('australia.csv')
+        fig = make_subplots(specs=[[{"secondary_y": True}]])
+        # Add traces
+        fig.add_trace(
+            go.Scatter(x=df.Year,y=df['Bank net interest margin (%)'], name="Bank Net Interest Margin"),
+            )
+        fig.add_trace(
+            go.Scatter(x=df.Year, y=df['Bank return on assets (%, after tax)'],name="Bank return on assets (%) after tax")
+            
+            )
+        
+        # Add figure title
+        fig.update_layout(
+            title_text="Bank Net Interest Margin (%) and Bank Return on Asset (after tax) (%) Relationship "
+            )
 
-    #figure4-cost structure2
-   fig4 = px.scatter(df, x='Year', y='Bank cost to income ratio (%)')
-   fig4.update_traces(mode='lines+markers')
-   fig4.update_xaxes(showgrid=False)
+    # Set x-axis title
+        fig.update_xaxes(title_text="Year")
+
+    # Set y-axes titles
+        fig.update_yaxes(
+                title_text="<b>Percentage (%)</b>", 
+                secondary_y=False)
+        fig.update_yaxes(
+                title_text="<b>secondary</b> yaxis title", 
+                secondary_y=True)
+        return fig
+   if value=='Bank of India': 
+        df = pd.read_csv('India.csv')
+        fig = make_subplots(specs=[[{"secondary_y": True}]])
+        
+        # Add traces
+        fig.add_trace(
+            go.Scatter(x=df.Year,y=df['Bank net interest margin (%)'], name="Bank Net Interest Margin"),
+            )
+        fig.add_trace(
+            go.Scatter(x=df.Year, y=df['Bank return on assets (%, after tax)'],name="Bank return on assets (%) after tax")
+            
+            )
+        
+        # Add figure title
+        fig.update_layout(
+            title_text="Bank Net Interest Margin (%) and Bank Return on Asset (after tax) (%) Relationship "
+            )
+
+    # Set x-axis title
+        fig.update_xaxes(title_text="Year")
+
+    # Set y-axes titles
+        fig.update_yaxes(
+                title_text="<b>Percentage (%)</b>", 
+                secondary_y=False)
+        fig.update_yaxes(
+                title_text="<b>secondary</b> yaxis title", 
+                secondary_y=True) 
+          
+        return fig
+    
    
-   #figreturn
-   fig6 = make_subplots(specs=[[{"secondary_y": True}]])
-   fig6.add_trace(
-    go.Scatter(x=df.Year,y=df['Bank return on assets (%, after tax)'], name="Bank Return On Asset"),
-    )
-   fig6.add_trace(
-    go.Scatter(x=df.Year, y=df['Bank return on equity (%, after tax)'],name="Bank Return On Equity")    
-    )
-   fig6.update_layout(
-    title_text="Bank Return On Asset and Bank Return On Equity"
-    )
+  
    return fig
 
 @app.callback(
@@ -175,32 +202,6 @@ def update_output(value):
 
 def update_output(value):
    df = pd.read_csv('empty.csv')
-   fig = make_subplots(specs=[[{"secondary_y": True}]])
-        
-        # Add traces
-   fig.add_trace(
-       go.Scatter(x=df.Year,y=df['Bank net interest margin (%)'], name="Bank Net Interest Margin"),
-       )
-   fig.add_trace(
-       go.Scatter(x=df.Year, y=df['Bank return on assets (%, after tax)'],name="Bank return on assets (%) after tax")
-            
-       )
-        
-        # Add figure title
-   fig.update_layout(
-       title_text="Bank Net Interest Margin (%) and Bank Return on Asset (after tax) (%) Relationship "
-       )
-
-    # Set x-axis title
-   fig.update_xaxes(title_text="Year")
-
-    # Set y-axes titles
-   fig.update_yaxes(
-       title_text="<b>Percentage (%)</b>", 
-       secondary_y=False)
-   fig.update_yaxes(
-       title_text="<b>secondary</b> yaxis title", 
-       secondary_y=True)
    
    fig2 = px.scatter(df, x='Year', y='Bank noninterest income to total income (%)')
    fig2.update_traces(mode='lines+markers')
@@ -208,28 +209,7 @@ def update_output(value):
    fig2.update_layout(
        title_text="Bank Non Interest Income (%)"
        )
-   
-   #figure3-cost structure
-   fig3 = px.scatter(df, x='Year', y='Bank overhead costs to total assets (%)')
-   fig3.update_traces(mode='lines+markers')
-   fig3.update_xaxes(showgrid=False)
-
-    #figure4-cost structure2
-   fig4 = px.scatter(df, x='Year', y='Bank cost to income ratio (%)')
-   fig4.update_traces(mode='lines+markers')
-   fig4.update_xaxes(showgrid=False)
-   
-   #figreturn
-   fig6 = make_subplots(specs=[[{"secondary_y": True}]])
-   fig6.add_trace(
-    go.Scatter(x=df.Year,y=df['Bank return on assets (%, after tax)'], name="Bank Return On Asset"),
-    )
-   fig6.add_trace(
-    go.Scatter(x=df.Year, y=df['Bank return on equity (%, after tax)'],name="Bank Return On Equity")    
-    )
-   fig6.update_layout(
-    title_text="Bank Return On Asset and Bank Return On Equity"
-    )
+  
    return fig2
 
 
