@@ -212,8 +212,72 @@ def update_output(value):
    fig2.update_layout(
        title_text="Bank Non Interest Income (%)"
        )
-  
+   if value=='Australian Securities and Investments Commission': 
+        return fig2
+   if value=='Bank of India': 
+        return fig2
    return fig2
+
+@app.callback(
+    dash.dependencies.Output('cost1', 'figure'),
+    [dash.dependencies.Input('first-dropdown', 'value')])
+
+def update_output(value):
+   df = pd.read_csv('empty.csv')
+   
+   #figure3-cost structure
+   fig3 = px.scatter(df, x='Year', y='Bank overhead costs to total assets (%)')
+   fig3.update_traces(mode='lines+markers')
+   fig3.update_xaxes(showgrid=False)
+     
+   if value=='Australian Securities and Investments Commission': 
+        return fig3
+   if value=='Bank of India': 
+        return fig3
+   return fig3
+
+@app.callback(
+    dash.dependencies.Output('cost2', 'figure'),
+    [dash.dependencies.Input('first-dropdown', 'value')])
+
+def update_output(value):
+   df = pd.read_csv('empty.csv')
+   
+    #figure4-cost structure2
+   fig4 = px.scatter(df, x='Year', y='Bank cost to income ratio (%)')
+   fig4.update_traces(mode='lines+markers')
+   fig4.update_xaxes(showgrid=False)
+     
+   if value=='Australian Securities and Investments Commission': 
+        return fig4
+   if value=='Bank of India': 
+        return fig4
+   return fig4
+
+@app.callback(
+    dash.dependencies.Output('return', 'figure'),
+    [dash.dependencies.Input('first-dropdown', 'value')])
+
+def update_output(value):
+   df = pd.read_csv('empty.csv')
+   
+   fig6 = make_subplots(specs=[[{"secondary_y": True}]])
+   fig6.add_trace(
+    go.Scatter(x=df.Year,y=df['Bank return on assets (%, after tax)'], name="Bank Return On Asset"),
+    )
+   fig6.add_trace(
+    go.Scatter(x=df.Year, y=df['Bank return on equity (%, after tax)'],name="Bank Return On Equity")    
+    )
+   fig6.update_layout(
+    title_text="Bank Return On Asset and Bank Return On Equity"
+    )
+     
+   if value=='Australian Securities and Investments Commission': 
+        return fig6
+   if value=='Bank of India': 
+        return fig6
+   return fig6
+
 
 @app.callback(
     dash.dependencies.Output('dd-output-container', 'children'),
