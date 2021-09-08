@@ -27,6 +27,7 @@ server = app.server
 app.config['suppress_callback_exceptions']=True
 myList = ['Pilih Intitusi Pengawasan','Australian Securities and Investments Commission', 'Bank of India','BNR-National Bank of Rwanda','Bangko Sentral ng Pilipinas (BSP)','National Banking and Securities Commission (CNBV)','De Nederlandsche Bank (DNB)','Financial Conduct Authority (FCA)','Monetary Authority of Singapore (MAS)','Security Exchange Commision (SEC)','OeNB (Austria)']
 default_category = 'Pilih Intitusi Pengawasan'
+
 data_url = 'https://raw.githubusercontent.com/plotly/datasets/master/2014_usa_states.csv'
 df = pd.read_csv(data_url)
 
@@ -101,7 +102,7 @@ app.layout = html.Div([
             style_cell=dict(textAlign='left'),
             style_header=dict(backgroundColor="paleturquoise"),
             style_data=dict(backgroundColor="lavender")
-          )
+            ),
               
                  
             html.H3('Key Person Indonesia'),
