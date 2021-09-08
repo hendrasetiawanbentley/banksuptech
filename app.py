@@ -91,16 +91,7 @@ app.layout = html.Div([
             html.Img(src=app.get_asset_url('suptechnetwork.png'), style={'height':'100%', 'width':'100%'})
             ],style={'width': '50%', 'display': 'inline-block','float': 'left'}),
              
-             dcc.Graph(
-                figure={
-                    'data': [
-                        {'x': [1, 2, 3], 'y': [1, 4, 1],
-                            'type': 'bar', 'name': 'SF'},
-                        {'x': [1, 2, 3], 'y': [1, 2, 3],
-                         'type': 'bar', 'name': u'Montréal'},
-                    ]
-                }
-            )
+        
         ]),
         dcc.Tab(label='Tab three', children=[
            
