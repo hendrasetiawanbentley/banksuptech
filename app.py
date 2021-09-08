@@ -82,8 +82,16 @@ app.layout = html.Div([
         ],style={'width': '100%', 'display': 'inline-block', 'float': 'right'})
             
         ]),
-        dcc.Tab(label='Tab two', children=[
-            dcc.Graph(
+        dcc.Tab(label='OJK Sentiment Analysis', children=[
+           #disini untuk mengisikan
+            html.Div([
+            html.H3('Pemantauan Twitter Major Media'),
+            #contoh major media
+            html.H5('Tempo Indonesia'),
+            html.Img(src=app.get_asset_url('suptechnetwork.png'), style={'height':'100%', 'width':'100%'})
+            ],style={'width': '50%', 'display': 'inline-block','float': 'left'}),
+             
+             dcc.Graph(
                 figure={
                     'data': [
                         {'x': [1, 2, 3], 'y': [1, 4, 1],
@@ -95,6 +103,7 @@ app.layout = html.Div([
             )
         ]),
         dcc.Tab(label='Tab three', children=[
+           
             dcc.Graph(
                 figure={
                     'data': [
