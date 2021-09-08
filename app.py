@@ -88,6 +88,25 @@ app.layout = html.Div([
             html.H3('Pemantauan Twitter Major Media'),
             #contoh major media
             html.H5('Tempo Indonesia'),
+            html.H6('Tweet Tempo dan Link Berita Tentang OJK'),
+            html.H6('Tabel dan Sentimen Analysis'),
+                 
+            html.H3('Key Person Indonesia'),
+            #contoh major media
+            html.H5('Menteri Keuangan'),
+            html.H6('Tweet Menteri Keuangan dan Terkait OJK'),
+            html.H6('Tabel dan Sentimen Analysis'),
+                 
+            html.H3('Google Search Result'),
+            #contoh major media
+            html.H5('Google Sentiment Analysis'),
+            html.H6('Tabel dan Sentimen Analysis'),
+                 
+            html.H3('Pemantauan Fokus OJK'),
+            #contoh major media
+            html.H5('UMKM, Digitalisasi, dan, Ekonomi Hijau'),
+            html.H6('Tabel dan Sentimen Analysis'),
+                 
             html.Img(src=app.get_asset_url('suptechnetwork.png'), style={'height':'100%', 'width':'100%'})
             ],style={'width': '50%', 'display': 'inline-block','float': 'left'}),
              
