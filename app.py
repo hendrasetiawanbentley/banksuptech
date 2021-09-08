@@ -27,6 +27,9 @@ server = app.server
 app.config['suppress_callback_exceptions']=True
 myList = ['Pilih Intitusi Pengawasan','Australian Securities and Investments Commission', 'Bank of India','BNR-National Bank of Rwanda','Bangko Sentral ng Pilipinas (BSP)','National Banking and Securities Commission (CNBV)','De Nederlandsche Bank (DNB)','Financial Conduct Authority (FCA)','Monetary Authority of Singapore (MAS)','Security Exchange Commision (SEC)','OeNB (Austria)']
 default_category = 'Pilih Intitusi Pengawasan'
+data_url = 'https://raw.githubusercontent.com/plotly/datasets/master/2014_usa_states.csv'
+df = pd.read_csv(data_url)
+
 
 app.layout = html.Div([
      html.Div([html.H1('Financial Services Supervisory Technology', style={'textAlign': 'center','background': '#f9f9f9','box-shadow': '0 0 1px rgba(0,0,0,.2), 0 2px 4px rgba(0,0,0,.1)','border-radius': '5px','margin-bottom': '20px','text-shadow': '1px 1px 1px rgba(0,0,0,.1)'})]),
@@ -90,19 +93,16 @@ app.layout = html.Div([
             html.H5('Tempo Indonesia'),
             html.H6('Tweet Tempo dan Link Berita Tentang OJK'),
             html.H6('Tabel dan Sentimen Analysis'),
-            
-            df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/2014_usa_states.csv')
-
-fig = go.Figure(data=[go.Table(
-    header=dict(values=list(df.columns),
-                fill_color='paleturquoise',
-                align='left'),
-    cells=dict(values=[df.Rank, df.State, df.Postal, df.Population],
-               fill_color='lavender',
-               align='left'))
-])
-
-fig.show(),
+            dash_table.DataTable(
+            id='table',
+            columns=[{"name": i, "id": i} 
+                 for i in df.columns],
+               data=df.to_dict('records'),
+            style_cell=dict(textAlign='left'),
+            style_header=dict(backgroundColor="paleturquoise"),
+            style_data=dict(backgroundColor="lavender")
+          )
+              
                  
             html.H3('Key Person Indonesia'),
             #contoh major media
