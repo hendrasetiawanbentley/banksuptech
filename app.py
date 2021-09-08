@@ -90,6 +90,19 @@ app.layout = html.Div([
             html.H5('Tempo Indonesia'),
             html.H6('Tweet Tempo dan Link Berita Tentang OJK'),
             html.H6('Tabel dan Sentimen Analysis'),
+            
+            df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/2014_usa_states.csv')
+
+fig = go.Figure(data=[go.Table(
+    header=dict(values=list(df.columns),
+                fill_color='paleturquoise',
+                align='left'),
+    cells=dict(values=[df.Rank, df.State, df.Postal, df.Population],
+               fill_color='lavender',
+               align='left'))
+])
+
+fig.show(),
                  
             html.H3('Key Person Indonesia'),
             #contoh major media
