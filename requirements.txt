@@ -27,7 +27,7 @@ Quandl==3.3.0
 numpy==1.19.4
 matplotlib==3.3.3
 matplotlib==3.3.3
-tweepy==4.0.0
+tweepy==3.10.0
 searchtweets==1.7.6
 csv==0.0.13
 textblob==0.15.3
