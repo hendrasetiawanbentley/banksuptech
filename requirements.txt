@@ -31,3 +31,4 @@ tweepy==3.10.0
 searchtweets==1.7.6
 textblob==0.15.3
 regex==2021.8.28
+googletrans==3.0.0
