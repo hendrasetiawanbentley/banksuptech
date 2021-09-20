@@ -22,7 +22,6 @@ import pandas as pd
 from searchtweets import ResultStream, gen_rule_payload, load_credentials
 from searchtweets import collect_results
 import numpy as np
-import csv
 import re
 import textblob
 from textblob import TextBlob
