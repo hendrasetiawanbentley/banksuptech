@@ -25,7 +25,7 @@ import numpy as np
 import re
 import textblob
 from textblob import TextBlob
-from googletrans import Translator
+#from googletrans import Translator
 
 
 
@@ -62,7 +62,7 @@ def analyze_sentiment(tweet):
     else:
         return 'Negative'
     
-tempoclean["Sentiment"] = tempoclean['cleantweet'].apply(lambda x: analyze_sentiment(x))
+#tempoclean["Sentiment"] = tempoclean['cleantweet'].apply(lambda x: analyze_sentiment(x))
 
 
 app.layout = html.Div([
