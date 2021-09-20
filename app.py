@@ -43,7 +43,7 @@ df = pd.read_csv(data_url)
 tempo=pd.read_csv('new_tempodotco_tweets.csv')
 tempo['signal']=tempo.text.str.contains('OJK')
 tempoclean=tempo.loc[tempo.signal==True,:]
-df = tempoclean
+
 
 def clean_tweet(tweet):
     return ' '.join(re.sub('(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)', ' ', tweet).split())#The long string of what seems like nonsense essentially takes away any characters that aren’t normal english words/letters.
