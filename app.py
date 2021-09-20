@@ -57,7 +57,7 @@ tempoclean["cleantweet"] = tempoclean['text'].apply(lambda x: clean_tweet(x))
 #for NLP
 def analyze_sentiment(tweet):
     analysis = TextBlob(tweet)
-    if an.sentiment.polarity > 0:
+    if analysis.sentiment.polarity > 0:
         return 'Positive'
     elif analysis.sentiment.polarity ==0:
         return 'Neutral'
