@@ -16,6 +16,16 @@ from dash.dependencies import Input, Output
 import dash_table
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
+import os
+import tweepy as tw
+import pandas as pd
+from searchtweets import ResultStream, gen_rule_payload, load_credentials
+from searchtweets import collect_results
+import numpy as np
+import csv
+import re
+import textblob
+from textblob import TextBlob
 
 
 
