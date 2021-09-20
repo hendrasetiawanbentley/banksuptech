@@ -31,6 +31,10 @@ default_category = 'Pilih Intitusi Pengawasan'
 data_url = 'https://raw.githubusercontent.com/plotly/datasets/master/2014_usa_states.csv'
 df = pd.read_csv(data_url)
 
+tempo=pd.read_csv('new_tempodotco_tweets.csv')
+tempo['signal']=tempo.text.str.contains('OJK')
+tempoclean=tempo.loc[tempo.signal==True,:]
+df = tempoclean
 
 app.layout = html.Div([
      html.Div([html.H1('Financial Services Supervisory Technology', style={'textAlign': 'center','background': '#f9f9f9','box-shadow': '0 0 1px rgba(0,0,0,.2), 0 2px 4px rgba(0,0,0,.1)','border-radius': '5px','margin-bottom': '20px','text-shadow': '1px 1px 1px rgba(0,0,0,.1)'})]),
