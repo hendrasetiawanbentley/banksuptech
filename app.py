@@ -26,7 +26,10 @@ import re
 import textblob
 from textblob import TextBlob
 from googletrans import Translator
+import nltk
 
+nltk.download('wordnet')
+nltk.download('punkt')
 
 
 
