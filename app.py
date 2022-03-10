@@ -167,8 +167,13 @@ app.layout = html.Div([
              
         
         ]),
-        dcc.Tab(label='Tab three', children=[
+        dcc.Tab(label='OJK Coincidence Index 4.0 Design', children=[
+           html.Div([
            
+           ],style={'width': '50%', 'display': 'inline-block','float': 'left'}),
+            
+            
+            
             dcc.Graph(
                 figure={
                     'data': [
@@ -179,6 +184,8 @@ app.layout = html.Div([
                     ]
                 }
             )
+            
+            
         ]),
     ])
 ])
