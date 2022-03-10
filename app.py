@@ -27,6 +27,7 @@ import textblob
 from textblob import TextBlob
 from googletrans import Translator
 import nltk
+import dash_auth
 from users import USERNAME_PASSWORD_PAIRS
 
 nltk.download('wordnet')
