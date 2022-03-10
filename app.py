@@ -168,7 +168,7 @@ app.layout = html.Div([
         
         ]),
         dcc.Tab(label='OJK Coincidence Index 4.0 Design', children=[
-           html.Div([
+           
                
            html.H3('Real Interest Rate and GDP Annual Growth Scatter Plot Interpretation'),
            html.P('From this scatter plot in 1997, we know that most of the countries were hovering between 0% to 10% annual GDP growth and between 0% to 10% real interest rate.', className='v', id='v'),
@@ -179,7 +179,7 @@ app.layout = html.Div([
            html.Br(),
            html.Br(),
            
-           ],style={'width': '50%', 'display': 'inline-block','float': 'left'}),
+           
             
             
             
