@@ -27,6 +27,7 @@ import textblob
 from textblob import TextBlob
 from googletrans import Translator
 import nltk
+from users import USERNAME_PASSWORD_PAIRS
 
 nltk.download('wordnet')
 nltk.download('punkt')
@@ -35,6 +36,11 @@ nltk.download('punkt')
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+auth = dash_auth.BasicAuth(
+    app,
+    USERNAME_PASSWORD_PAIRS
+)
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 app.config['suppress_callback_exceptions']=True
