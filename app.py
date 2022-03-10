@@ -170,8 +170,11 @@ app.layout = html.Div([
         dcc.Tab(label='OJK Coincidence Index 4.0 Design', children=[
            
                
-           html.H3('Real Interest Rate and GDP Annual Growth Scatter Plot Interpretation'),
-           html.P('From this scatter plot in 1997, we know that most of the countries were hovering between 0% to 10% annual GDP growth and between 0% to 10% real interest rate.', className='v', id='v'),
+           html.H3('OJK Coincidence Index'),
+           html.P('OJK Coincidence Index memiliki nilai yang meningkat apabila terjadi “tekanan” pada sistem yang cenderung mengarah ke kondisi “krisis” keuangan. Terdapat 5 (lima) dimensi tekanan didalam OJK Coincidence Index yaitu Pasar Nilai Tukar, Pasar Utang, Pasar Uang Antar Bank, Pasar Saham,  IJK yang akan di agregasikan menjadi 1 (satu) indeks komposit. (sebagaimana terlihat pada gambar dibawah)', className='v', id='v'),
+           html.Img(src=app.get_asset_url('Screen Shot 2022-03-10 at 6.19.14 PM.png'), style={'height':'100%', 'width':'100%'}),
+        
+        
            html.P('If you change the slider to 1998, the graph showed that many countries fell down to lower annual GDP growth. This means that countries with high annual GDP growth a year before experienced a downward pressure.', className='c', id='c'),
            html.P('In 1999 (year after economic downturn), we can notice that there is an increase in the number of countries with low real interest rate. This can be a sign that governments try to increase bank lending by lowering their interest rates.', className='f', id='f'),
            html.P('Similar trend is happening with Lending Interest Rates and in 2007 - 2008 Period', className='g', id='g'),
