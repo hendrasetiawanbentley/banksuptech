@@ -172,7 +172,7 @@ app.layout = html.Div([
                
            html.H3('OJK Coincidence Index'),
            html.P('OJK Coincidence Index memiliki nilai yang meningkat apabila terjadi “tekanan” pada sistem yang cenderung mengarah ke kondisi “krisis” keuangan. Terdapat 5 (lima) dimensi tekanan didalam OJK Coincidence Index yaitu Pasar Nilai Tukar, Pasar Utang, Pasar Uang Antar Bank, Pasar Saham,  IJK yang akan di agregasikan menjadi 1 (satu) indeks komposit. (sebagaimana terlihat pada gambar dibawah)', className='v', id='v'),
-           html.Img(src=app.get_asset_url('Screen Shot 2022-03-10 at 6.19.14 PM.png'), style={'height':'100%', 'width':'100%'}),
+           html.Img(src=app.get_asset_url('cth1.png'), style={'height':'100%', 'width':'100%'}),
         
         
            html.P('If you change the slider to 1998, the graph showed that many countries fell down to lower annual GDP growth. This means that countries with high annual GDP growth a year before experienced a downward pressure.', className='c', id='c'),
