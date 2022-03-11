@@ -176,7 +176,7 @@ app.layout = html.Div([
            html.P('Semua indikator menggunakan data market dengan frekuensi yang tinggi (harian) dan lag publikasi yang singkat agar dapat mengukur episode stres ke depan dalam waktu yang cepat dan akurat, dan dapat mengestimasi tingkat keparahan episode tersebut. Selanjutnya, Pembobotan masing-masing indeks segmen untuk dikelompokkan ke indeks komposit menggunakan bivariate vector autoregression (VAR) model dan Ambang batas kritikal dihitung dari indeks rata-rata 10 hari sebelum dua tekanan tertinggi pada OJK Index selama masa pengamatan (Januari 2005 s/d Juli 2014).', className='c', id='c'),
            html.Br(),
            html.H3('OJK Coincidence Index 2.0'),
-           html.P('OJK Coin dikembangkan pertama kali pada tahun 2014 berdasarkan naskah Hollo, Kremer, dan Duca (2012). OJK Coin v2.0, merupakan hasil dari penyempurnaan di tahun 2015 yang didokumentasikan melalui Catatan Riset No. CR/15/02. Pengembangaan, untuk meningkatkan keandalan alat ukur tekanan di sektor keuangan domestik'),
+           html.P('OJK Coin dikembangkan pertama kali pada tahun 2014 berdasarkan naskah Hollo, Kremer, dan Duca (2012). OJK Coin v2.0, merupakan hasil dari penyempurnaan di tahun 2015 yang didokumentasikan melalui Catatan Riset No. CR/15/02. Pengembangaan dilaksanakan untuk meningkatkan keandalan alat ukur tekanan di sektor keuangan domestik'),
            html.P('Pengembangan pada tahun 2015 sebagai berikut:'),
            html.Br(),
            html.P('1.Perubahan perhitungan rentang waktu pergerakan nilai tukar IDR/USD dan imbal hasil (yield) Surat Berharga Negara (SBN) dari periode harian menjadi 10 hari'), 
@@ -185,6 +185,24 @@ app.layout = html.Div([
            html.P('4.Perubahan perhitungan bobot masing-masing segmen dengan menggunakan metode principal component analysis (PCA) dari estimasi bivariate autoregression sebelumnya'),
            html.P('5.Perubahan metode perhitungan batas ambang tekanan berdasarkan kuantil'),
            html.P('6.Perubahan metode penyesuaian skala nilai indikator dari metode standardisasi normal menjadi order statistics'),
+           html.Br(),
+           html.H3('OJK Coincidence Index 3.0'),
+           html.P('Dari analisa OJK Coin harian, ditemukan inkonsistensi indeks dalam merefleksikan kondisi tekanan granular, terutama pada segmen pasar nilai tukar dan pasar surat utang. Salah satu contohnya adalah inkonsistensi pada hasil analisa tanggal 19 Juli 2018, sebagaimana ditampilkan pada Gambar 2. Kondisi pasar nilai tukar dan surat utang tanggal 19 Juli memburuk apabila dibandingkan dengan tanggal 18 Juli SBN 10Y. Namun demikian, OJK Coin memberikan sinyal kontradiktif dengan nilai indeks segmen pasar nilai tukar dan pasar utang malah menunjukkan penurunan.'),
+           html.P('Untuk meningkatkan akurasi OJK Coin dalam mengukur tingkat tekanan pasar keuangan, dilakukan penyempurnaan sebagai berikut:'),
+           html.Br(), 
+           html.P('1. Menghilangkan indikator B/A spread nilai tukar dan yield SBN; dan'),
+           html.P('2. Mengganti indikator B/A spread volatilitas nilai tukar dan CDS menjadi CMIN(60) data last price CDS dan volatilitas nilai tukar. '),
+           html.Br(), 
+           html.P('Penyeragaman Metode Transformasi Sebagai Berikut'),
+           html.P('Terdapat dua jenis metode tranformasi yang digunakan di OJK Coin v2.0 yaitu CMAX/CMIN(60)1 dan Δ20d2. Kedua metode tersebut kemudian dibandingkan untuk mencari metode tranformasi terbaik yang mampu meningkatkan akurasi OJK Coin. Metode tranformasi terpilih akan diaplikasikan kepada seluruh indikator yang ada di OJK Coin secara seragam kecuali segmen IJK. Metode CMAX/CMIN(60) dipilih sebagai metode transformasi tunggal di dalam OJK Coin v3.0.'),
+           html.P('Indikator volatilitas IHSG ditambahkan menjadi salah satu indikator segmen pasar saham sebagai alat pengukuran tekanan volatilitas pergerakan harga indeks. Volatilitas IHSG dihitung secara historis dalam rolling rentang sampel 1 bulan. Indikator volatilitas IHSG ini kemudian ditranformasi menggunakan metode CMIN(60), seragam dengan indikator-indikator lainnya.'),
+           html.Br(), 
+           html.P('OJK Coin telah disempurnakan lebih lanjut dengan cara: 1. Mengganti indikator segmen pasar utang dan nilai tukar menjadi  CMIN(60) data last price; dan 2. Menambahkan indikator CMIN(60) volatilitas 1M daily return IHSG di segmen pasar saham.'), 
+           html.Br(),
+           html.H3('Design OJK Coincidence Index 3.0'),
+           html.Img(src=app.get_asset_url('cth1.png'), style={'height':'10%', 'width':'10%'}),
+            
+
 
            
             
