@@ -170,12 +170,12 @@ app.layout = html.Div([
         dcc.Tab(label='OJK Coincidence Index 4.0 Design', children=[
            
                
-           html.H3(<b>'OJK Coincidence Index 1.0'</b>),
+           html.H3('**OJK Coincidence Index 1.0**'),
            html.P('OJK Coincidence Index memiliki nilai yang meningkat apabila terjadi “tekanan” pada sistem yang cenderung mengarah ke kondisi “krisis” keuangan. Terdapat 5 (lima) dimensi tekanan didalam OJK Coincidence Index yaitu Pasar Nilai Tukar, Pasar Utang, Pasar Uang Antar Bank, Pasar Saham,  IJK yang akan di agregasikan menjadi 1 (satu) indeks komposit. (sebagaimana terlihat pada gambar dibawah)', className='v', id='v'),
            html.Img(src=app.get_asset_url('cth1.png'), style={'height':'20%', 'width':'20%'}),
            html.P('Semua indikator menggunakan data market dengan frekuensi yang tinggi (harian) dan lag publikasi yang singkat agar dapat mengukur episode stres ke depan dalam waktu yang cepat dan akurat, dan dapat mengestimasi tingkat keparahan episode tersebut. Selanjutnya, Pembobotan masing-masing indeks segmen untuk dikelompokkan ke indeks komposit menggunakan bivariate vector autoregression (VAR) model dan Ambang batas kritikal dihitung dari indeks rata-rata 10 hari sebelum dua tekanan tertinggi pada OJK Index selama masa pengamatan (Januari 2005 s/d Juli 2014).', className='c', id='c'),
            html.Br(),
-           html.H3('OJK Coincidence Index 2.0'),
+           html.H3('**OJK Coincidence Index 2.0**'),
            html.P('OJK Coin dikembangkan pertama kali pada tahun 2014 berdasarkan naskah Hollo, Kremer, dan Duca (2012). OJK Coin v2.0, merupakan hasil dari penyempurnaan di tahun 2015 yang didokumentasikan melalui Catatan Riset No. CR/15/02. Pengembangaan dilaksanakan untuk meningkatkan keandalan alat ukur tekanan di sektor keuangan domestik'),
            html.P('Pengembangan pada tahun 2015 sebagai berikut:'),
            html.Br(),
@@ -186,7 +186,7 @@ app.layout = html.Div([
            html.P('5.Perubahan metode perhitungan batas ambang tekanan berdasarkan kuantil'),
            html.P('6.Perubahan metode penyesuaian skala nilai indikator dari metode standardisasi normal menjadi order statistics'),
            html.Br(),
-           html.H3('OJK Coincidence Index 3.0'),
+           html.H3('**OJK Coincidence Index 3.0**'),
            html.P('Dari analisa OJK Coin harian, ditemukan inkonsistensi indeks dalam merefleksikan kondisi tekanan granular, terutama pada segmen pasar nilai tukar dan pasar surat utang. Salah satu contohnya adalah inkonsistensi pada hasil analisa tanggal 19 Juli 2018. Kondisi pasar nilai tukar dan surat utang tanggal 19 Juli memburuk apabila dibandingkan dengan tanggal 18 Juli SBN 10Y. Namun demikian, OJK Coin memberikan sinyal kontradiktif dengan nilai indeks segmen pasar nilai tukar dan pasar utang malah menunjukkan penurunan.'),
            html.P('Untuk meningkatkan akurasi OJK Coin dalam mengukur tingkat tekanan pasar keuangan, dilakukan penyempurnaan sebagai berikut:'),
            html.Br(), 
@@ -201,15 +201,15 @@ app.layout = html.Div([
            html.P('1. Mengganti indikator segmen pasar utang dan nilai tukar menjadi  CMIN(60) data last price;'),
            html.P('2. Menambahkan indikator CMIN(60) volatilitas 1M daily return IHSG di segmen pasar saham.'),
            html.Br(),
-           html.H4('Design OJK Coincidence Index 3.0'),
+           html.H4('**Design OJK Coincidence Index 3.0**'),
            html.Img(src=app.get_asset_url('cth2.png'), style={'height':'30%', 'width':'30%'}),
             
-           html.P('Paper Penyusunan OJK Index'),
+           html.P('**Paper Penyusunan OJK Index**'),
            html.Br(),
            html.P('Brownlees C dan R. Engle 2011 Volatility, Correlation, and Tails for Systemic Risk Measurement Working Paper'),
            html.P('EngleRobert 2002 Dynamic Conditional Correlation A Simple Class of Multivariate GARCH Models Journal of Business and Economic Statistics'),
            html.P('Hollo D  Kremer M dan M. Lo Duca 2012 CISS A Composite Indicator of Systemic Stress in the Financial System Working Paper Series No 1426 Macroprudential Research Network MARS'),
-            html.P('Lo Duca, Marco dan Tuomas A Petone 2011 Macro-financial Vulnerabilities and Future Financial Stress  Assessing Systemic Risks and Predicting Systemic Events Working Paper Series No 1311 Macroprudential Research Network MARS Maret'), 
+           html.P('Lo Duca, Marco dan Tuomas A Petone 2011 Macro-financial Vulnerabilities and Future Financial Stress  Assessing Systemic Risks and Predicting Systemic Events Working Paper Series No 1311 Macroprudential Research Network MARS Maret'), 
 
            
             
