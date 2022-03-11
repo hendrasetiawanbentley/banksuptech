@@ -187,7 +187,7 @@ app.layout = html.Div([
            html.P('6.Perubahan metode penyesuaian skala nilai indikator dari metode standardisasi normal menjadi order statistics'),
            html.Br(),
            html.H3('OJK Coincidence Index 3.0'),
-           html.P('Dari analisa OJK Coin harian, ditemukan inkonsistensi indeks dalam merefleksikan kondisi tekanan granular, terutama pada segmen pasar nilai tukar dan pasar surat utang. Salah satu contohnya adalah inkonsistensi pada hasil analisa tanggal 19 Juli 2018, sebagaimana ditampilkan pada Gambar 2. Kondisi pasar nilai tukar dan surat utang tanggal 19 Juli memburuk apabila dibandingkan dengan tanggal 18 Juli SBN 10Y. Namun demikian, OJK Coin memberikan sinyal kontradiktif dengan nilai indeks segmen pasar nilai tukar dan pasar utang malah menunjukkan penurunan.'),
+           html.P('Dari analisa OJK Coin harian, ditemukan inkonsistensi indeks dalam merefleksikan kondisi tekanan granular, terutama pada segmen pasar nilai tukar dan pasar surat utang. Salah satu contohnya adalah inkonsistensi pada hasil analisa tanggal 19 Juli 2018. Kondisi pasar nilai tukar dan surat utang tanggal 19 Juli memburuk apabila dibandingkan dengan tanggal 18 Juli SBN 10Y. Namun demikian, OJK Coin memberikan sinyal kontradiktif dengan nilai indeks segmen pasar nilai tukar dan pasar utang malah menunjukkan penurunan.'),
            html.P('Untuk meningkatkan akurasi OJK Coin dalam mengukur tingkat tekanan pasar keuangan, dilakukan penyempurnaan sebagai berikut:'),
            html.Br(), 
            html.P('1. Menghilangkan indikator B/A spread nilai tukar dan yield SBN; dan'),
@@ -201,6 +201,14 @@ app.layout = html.Div([
            html.Br(),
            html.H3('Design OJK Coincidence Index 3.0'),
            html.Img(src=app.get_asset_url('cth1.png'), style={'height':'10%', 'width':'10%'}),
+            
+           html.P('Paper Penyusunan OJK Index'),
+           html.Br(),
+           html.P('Brownlees, C. dan R. Engle (2011), Volatility, Correlation, and Tails for Systemic Risk Measurement, Working Paper.'),
+           html.P('Engle, Robert (2002), Dynamic Conditional Correlation: A Simple Class of Multivariate GARCH Models, Journal of Business and Economic Statistics.'),
+           html.P('Hollo, D., Kremer, M., dan M. Lo Duca (2012), “CISS – A Composite Indicator of Systemic Stress in the Financial System, Working Paper Series No. 1426, Macroprudential Research Network (MARS)’),
+           html.P('Lo Duca, Marco dan Tuomas A, Petone (2011), Macro-financial Vulnerabilities and Future Financial Stress: Assessing Systemic Risks and Predicting Systemic Events, Working Paper Series No. 1311, Macroprudential Research Network (MARS), Maret'), 
+
             
 
 
