@@ -175,16 +175,6 @@ app.layout = html.Div([
            html.Img(src=app.get_asset_url('cth1.png'), style={'height':'10%', 'width':'10%'}),
            html.P('Semua indikator menggunakan data market dengan frekuensi yang tinggi (harian) dan lag publikasi yang singkat agar dapat mengukur episode stres ke depan dalam waktu yang cepat dan akurat, dan dapat mengestimasi tingkat keparahan episode tersebut. Selanjutnya, Pembobotan masing-masing indeks segmen untuk dikelompokkan ke indeks komposit menggunakan bivariate vector autoregression (VAR) model dan Ambang batas kritikal dihitung dari indeks rata-rata 10 hari sebelum dua tekanan tertinggi pada OJK Index selama masa pengamatan (Januari 2005 s/d Juli 2014).', className='c', id='c'),
            html.Br(),
-           html.H3('OJK Coincidence Index 2.0'),
-           html.P('OJK Coin dikembangkan pertama kali pada tahun 2014 berdasarkan naskah Hollo, Kremer, dan Duca (2012). OJK Coin v2.0, merupakan hasil dari penyempurnaan di tahun 2015 yang didokumentasikan melalui Catatan Riset No. CR/15/02. Pengembangaan, untuk meningkatkan keandalan alat ukur tekanan di sektor keuangan domestik', className='f', id='f'),
-           html.P('Pengembangan pada tahun 2015 sebagai berikut:', className='g', id='g'),
-           html.Br(),
-           html.P('1.Perubahan perhitungan rentang waktu pergerakan nilai tukar IDR/USD dan imbal hasil (yield) Surat Berharga Negara (SBN) dari periode harian menjadi 10 hari', className='g', id='g'), 
-           html.P('2.Perubahan metode perhitungan tingkat suku bunga antar bank (JIBOR) dari CMAX menjadi CMIN', className='g', id='g'),
-           html.P('3.Perubahan indikator risiko gagal (default) institusi jasa keuangan dengan menggunakan metode component expected shortfall (CES).', className='g', id='g'),
-           html.P('4.Perubahan perhitungan bobot masing-masing segmen dengan menggunakan metode principal component analysis (PCA) dari estimasi bivariate autoregression sebelumnya', className='g', id='g'),
-           html.P('5.Perubahan metode perhitungan batas ambang tekanan berdasarkan kuantil', className='g', id='g'),
-           html.P('6.Perubahan metode penyesuaian skala nilai indikator dari metode standardisasi normal menjadi order statistics', className='g', id='g'),
            
             
             dcc.Graph(
