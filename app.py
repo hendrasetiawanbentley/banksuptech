@@ -185,31 +185,7 @@ app.layout = html.Div([
            html.P('4.Perubahan perhitungan bobot masing-masing segmen dengan menggunakan metode principal component analysis (PCA) dari estimasi bivariate autoregression sebelumnya', className='g', id='g'),
            html.P('5.Perubahan metode perhitungan batas ambang tekanan berdasarkan kuantil', className='g', id='g'),
            html.P('6.Perubahan metode penyesuaian skala nilai indikator dari metode standardisasi normal menjadi order statistics', className='g', id='g'),
-           html.Br(),
-           html.H3('OJK Coincidence Index 3.0'),
-           html.P('Dari analisa OJK Coin harian, ditemukan inkonsistensi indeks dalam merefleksikan kondisi tekanan granular, terutama pada segmen pasar nilai tukar dan pasar surat utang. Salah satu contohnya adalah inkonsistensi pada hasil analisa tanggal 19 Juli 2018, sebagaimana ditampilkan pada Gambar 2. Kondisi pasar nilai tukar dan surat utang tanggal 19 Juli memburuk apabila dibandingkan dengan tanggal 18 Juli SBN 10Y. Namun demikian, OJK Coin memberikan sinyal kontradiktif dengan nilai indeks segmen pasar nilai tukar dan pasar utang malah menunjukkan penurunan.', className='f', id='f'),
-           html.P('Untuk meningkatkan akurasi OJK Coin dalam mengukur tingkat tekanan pasar keuangan, dilakukan penyempurnaan sebagai berikut:', className='f', id='f'),
-           html.Br(), 
-           html.P('1. Menghilangkan indikator B/A spread nilai tukar dan yield SBN; dan', className='g', id='g'),
-           html.P('2. Mengganti indikator B/A spread volatilitas nilai tukar dan CDS menjadi CMIN(60) data last price CDS dan volatilitas nilai tukar. ', className='g', id='g'),
-           html.Br(), 
-           html.P('Penyeragaman Metode Transformasi Sebagai Berikut', className='f', id='f'),
-           html.P('Terdapat dua jenis metode tranformasi yang digunakan di OJK Coin v2.0 yaitu CMAX/CMIN(60)1 dan Δ20d2. Kedua metode tersebut kemudian dibandingkan untuk mencari metode tranformasi terbaik yang mampu meningkatkan akurasi OJK Coin. Metode tranformasi terpilih akan diaplikasikan kepada seluruh indikator yang ada di OJK Coin secara seragam kecuali segmen IJK. Metode CMAX/CMIN(60) dipilih sebagai metode transformasi tunggal di dalam OJK Coin v3.0.', className='f', id='f'),
-           html.P('Indikator volatilitas IHSG ditambahkan menjadi salah satu indikator segmen pasar saham sebagai alat pengukuran tekanan volatilitas pergerakan harga indeks. Volatilitas IHSG dihitung secara historis dalam rolling rentang sampel 1 bulan. Indikator volatilitas IHSG ini kemudian ditranformasi menggunakan metode CMIN(60), seragam dengan indikator-indikator lainnya.', className='f', id='f'),
-           html.Br(), 
-           html.P('OJK Coin telah disempurnakan lebih lanjut dengan cara: 1. Mengganti indikator segmen pasar utang dan nilai tukar menjadi  CMIN(60) data last price; dan 2. Menambahkan indikator CMIN(60) volatilitas 1M daily return IHSG di segmen pasar saham.', className='f', id='f'), 
-           html.Br(),
-           html.H3('Design OJK Coincidence Index 3.0'),
-           html.Img(src=app.get_asset_url('cth1.png'), style={'height':'10%', 'width':'10%'}),
-            
-            
-           html.P('Paper Penyusunan OJK Index', className='g', id='g'),
-           html.Br(),
-           html.P('Brownlees, C. dan R. Engle (2011), “Volatility, Correlation, and Tails for Systemic Risk Measurement,” Working Paper.', className='g', id='g'),
-           html.P('Engle, Robert (2002), “Dynamic Conditional Correlation: A Simple Class of Multivariate GARCH Models,” Journal of Business and Economic Statistics.', className='g', id='g'),
-           html.P('Hollo, D., Kremer, M., dan M. Lo Duca (2012), “CISS – A Composite Indicator of Systemic Stress in the Financial System,” Working Paper Series No. 1426, Macroprudential Research Network (MARS), Maret', className='g', id='g'),
-           html.P('Lo Duca, Marco dan Tuomas A, Petone (2011), “Macro-financial Vulnerabilities and Future Financial Stress: Assessing Systemic Risks and Predicting Systemic Events,” Working Paper Series No. 1311, Macroprudential Research Network (MARS), Maret', className='g', id='g'), 
-            
+           
             
             dcc.Graph(
                 figure={
