@@ -208,7 +208,6 @@ app.layout = html.Div([
            html.Br(),
            html.P('Brownlees C dan R. Engle 2011 Volatility, Correlation, and Tails for Systemic Risk Measurement Working Paper'),
            html.P('EngleRobert 2002 Dynamic Conditional Correlation A Simple Class of Multivariate GARCH Models Journal of Business and Economic Statistics'),
-           html.P('Hollo D  Kremer M dan M. Lo Duca 2012 CISS A Composite Indicator of Systemic Stress in the Financial System Working Paper Series No 1426 Macroprudential Research Network MARS'),
            
            
 
