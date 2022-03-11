@@ -172,9 +172,20 @@ app.layout = html.Div([
                
            html.H3('OJK Coincidence Index 1.0'),
            html.P('OJK Coincidence Index memiliki nilai yang meningkat apabila terjadi “tekanan” pada sistem yang cenderung mengarah ke kondisi “krisis” keuangan. Terdapat 5 (lima) dimensi tekanan didalam OJK Coincidence Index yaitu Pasar Nilai Tukar, Pasar Utang, Pasar Uang Antar Bank, Pasar Saham,  IJK yang akan di agregasikan menjadi 1 (satu) indeks komposit. (sebagaimana terlihat pada gambar dibawah)', className='v', id='v'),
-           html.Img(src=app.get_asset_url('cth1.png'), style={'height':'10%', 'width':'10%'}),
+           html.Img(src=app.get_asset_url('cth1.png'), style={'height':'20%', 'width':'20%'}),
            html.P('Semua indikator menggunakan data market dengan frekuensi yang tinggi (harian) dan lag publikasi yang singkat agar dapat mengukur episode stres ke depan dalam waktu yang cepat dan akurat, dan dapat mengestimasi tingkat keparahan episode tersebut. Selanjutnya, Pembobotan masing-masing indeks segmen untuk dikelompokkan ke indeks komposit menggunakan bivariate vector autoregression (VAR) model dan Ambang batas kritikal dihitung dari indeks rata-rata 10 hari sebelum dua tekanan tertinggi pada OJK Index selama masa pengamatan (Januari 2005 s/d Juli 2014).', className='c', id='c'),
            html.Br(),
+           html.H3('OJK Coincidence Index 2.0'),
+           html.P('OJK Coin dikembangkan pertama kali pada tahun 2014 berdasarkan naskah Hollo, Kremer, dan Duca (2012). OJK Coin v2.0, merupakan hasil dari penyempurnaan di tahun 2015 yang didokumentasikan melalui Catatan Riset No. CR/15/02. Pengembangaan, untuk meningkatkan keandalan alat ukur tekanan di sektor keuangan domestik'),
+           html.P('Pengembangan pada tahun 2015 sebagai berikut:'),
+           html.Br(),
+           html.P('1.Perubahan perhitungan rentang waktu pergerakan nilai tukar IDR/USD dan imbal hasil (yield) Surat Berharga Negara (SBN) dari periode harian menjadi 10 hari'), 
+           html.P('2.Perubahan metode perhitungan tingkat suku bunga antar bank (JIBOR) dari CMAX menjadi CMIN'),
+           html.P('3.Perubahan indikator risiko gagal (default) institusi jasa keuangan dengan menggunakan metode component expected shortfall (CES).'),
+           html.P('4.Perubahan perhitungan bobot masing-masing segmen dengan menggunakan metode principal component analysis (PCA) dari estimasi bivariate autoregression sebelumnya'),
+           html.P('5.Perubahan metode perhitungan batas ambang tekanan berdasarkan kuantil'),
+           html.P('6.Perubahan metode penyesuaian skala nilai indikator dari metode standardisasi normal menjadi order statistics'),
+
            
             
             dcc.Graph(
